@@ -5,121 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>🦁 Carrum U10 Navy Lions 🏏</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* small inline styles for the audio hint and lightbox layout */
+    .audio-hint { text-align:center; color:#666; font-size:0.9rem; margin-top:8px; }
+    .audio-controls-wrap { text-align:center; margin-bottom:8px; }
+    .lightbox { align-items:center; justify-content:center; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; display:none; }
+    .lightbox img { max-width:90%; max-height:80%; }
+    .close { position:absolute; top:20px; right:30px; color:#fff; font-size:2rem; cursor:pointer; }
+    .prev, .next { position:absolute; top:50%; transform:translateY(-50%); background:transparent; border:none; color:#fff; font-size:2rem; cursor:pointer; }
+    .prev { left:20px; } .next { right:20px; }
+    .gallery .photo { display:inline-block; margin:8px; }
+    .gallery img { max-width:180px; height:auto; display:block; cursor:pointer; }
+  </style>
 </head>
 <body>
 
   <h1>🦁 Carrum U10 Navy Lions 🏏 Round 1</h1>
 
-<!-- Add links to other repositories  class="active"   -->
-<ul class="nav-list">
+  <ul class="nav-list">
+    <li><a href="https://mariebridgwood.github.io/Gallery">Home</a></li>
+  </ul>
 
-  <li><a href="https://mariebridgwood.github.io/Gallery">Home</a></li>
-
-</ul>
-
-<audio autoplay loop>
-  <source src="audio/Lions.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <!-- Audio element: we do NOT use autoplay. We will start on a user click on a photo.
+       It loops and is preloaded. playsinline helps mobile. -->
+  <div class="audio-controls-wrap">
+    <audio id="bgAudio" loop preload="auto" playsinline>
+      <source src="audio/Lions.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <button id="toggleAudio" aria-pressed="false">Play audio</button>
+    <div id="audioHint" class="audio-hint">Click a photo to open it and start audio (playback will continue while you view photos).</div>
+  </div>
 
   <div id="gallery" class="gallery"></div>
 
   <!-- Lightbox -->
   <div class="lightbox" style="display:none;">
-    <span class="close">&times;</span>
+    <span class="close" title="Close">&times;</span>
     <img src="" alt="Enlarged photo">
-    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-    <button class="next" onclick="changeImage(1)">&#10095;</button>
+    <button class="prev" onclick="changeImage(-1)" title="Previous">&#10094;</button>
+    <button class="next" onclick="changeImage(1)" title="Next">&#10095;</button>
   </div>
 
 <script>
   const imageList = [
-"DSC_0024.JPG",
-"DSC_0025.JPG",
-"DSC_0026.JPG",
-"DSC_0029.JPG",
-"DSC_0031.JPG",
-"DSC_0034.JPG",
-"DSC_0038.JPG",
-"DSC_0040.JPG",
-"DSC_0041.JPG",
-"DSC_0042.JPG",
-"DSC_0052.JPG",
-"DSC_0054.JPG",
-"DSC_0060.JPG",
-"DSC_0066.JPG",
-"DSC_0068.JPG",
-"DSC_0074.JPG",
-"DSC_0078.JPG",
-"DSC_0084.JPG",
-"DSC_0087.JPG",
-"DSC_0089.JPG",
-"DSC_0096.JPG",
-"DSC_0097.JPG",
-"DSC_0103.JPG",
-"DSC_0104.JPG",
-"DSC_0105.JPG",
-"DSC_0118.JPG",
-"DSC_0120.JPG",
-"DSC_0121.JPG",
-"DSC_0122.JPG",
-"DSC_0123.JPG",
-"DSC_0132.JPG",
-"DSC_0134.JPG",
-"DSC_0136.JPG",
-"DSC_0138.JPG",
-"DSC_0140.JPG",
-"DSC_0143.JPG",
-"DSC_0149.JPG",
-"DSC_0151.JPG",
-"DSC_0152.JPG",
-"DSC_0155.JPG",
-"DSC_0156.JPG",
-"DSC_0164.JPG",
-"DSC_0166.JPG",
-"DSC_0169.JPG",
-"DSC_0171.JPG",
-"DSC_0173.JPG",
-"DSC_0175.JPG",
-"DSC_0178.JPG",
-"DSC_0180.JPG",
-"DSC_0188.JPG",
-"DSC_0189.JPG",
-"DSC_0192.JPG",
-"DSC_0194.JPG",
-"DSC_0204.JPG",
-"DSC_0205.JPG",
-"DSC_0206.JPG",
-"DSC_0210.JPG",
-"DSC_0223.JPG",
-"DSC_0225.JPG",
-"DSC_0227.JPG",
-"DSC_0229.JPG",
-"DSC_0231.JPG",
-"DSC_0232.JPG",
-"DSC_0236.JPG",
-"DSC_0241.JPG",
-"DSC_0243.JPG",
-"DSC_0248.JPG",
-"DSC_0250.JPG",
-"DSC_0253.JPG",
-"DSC_0255.JPG",
-"DSC_0257.JPG",
-"DSC_0259.JPG",
-"DSC_0261.JPG",
-"DSC_0266.JPG",
-"DSC_0269.JPG",
-"DSC_0270.JPG",
-"DSC_0275.JPG",
-"DSC_0277.JPG",
-"DSC_0278.JPG",
-"DSC_0283.JPG"
+"DSC_0024.JPG","DSC_0025.JPG","DSC_0026.JPG","DSC_0029.JPG","DSC_0031.JPG","DSC_0034.JPG","DSC_0038.JPG","DSC_0040.JPG","DSC_0041.JPG","DSC_0042.JPG","DSC_0052.JPG","DSC_0054.JPG","DSC_0060.JPG","DSC_0066.JPG","DSC_0068.JPG","DSC_0074.JPG","DSC_0078.JPG","DSC_0084.JPG","DSC_0087.JPG","DSC_0089.JPG","DSC_0096.JPG","DSC_0097.JPG","DSC_0103.JPG","DSC_0104.JPG","DSC_0105.JPG","DSC_0118.JPG","DSC_0120.JPG","DSC_0121.JPG","DSC_0122.JPG","DSC_0123.JPG","DSC_0132.JPG","DSC_0134.JPG","DSC_0136.JPG","DSC_0138.JPG","DSC_0140.JPG","DSC_0143.JPG","DSC_0149.JPG","DSC_0151.JPG","DSC_0152.JPG","DSC_0155.JPG","DSC_0156.JPG","DSC_0164.JPG","DSC_0166.JPG","DSC_0169.JPG","DSC_0171.JPG","DSC_0173.JPG","DSC_0175.JPG","DSC_0178.JPG","DSC_0180.JPG","DSC_0188.JPG","DSC_0189.JPG","DSC_0192.JPG","DSC_0194.JPG","DSC_0204.JPG","DSC_0205.JPG","DSC_0206.JPG","DSC_0210.JPG","DSC_0223.JPG","DSC_0225.JPG","DSC_0227.JPG","DSC_0229.JPG","DSC_0231.JPG","DSC_0232.JPG","DSC_0236.JPG","DSC_0241.JPG","DSC_0243.JPG","DSC_0248.JPG","DSC_0250.JPG","DSC_0253.JPG","DSC_0255.JPG","DSC_0257.JPG","DSC_0259.JPG","DSC_0261.JPG","DSC_0266.JPG","DSC_0269.JPG","DSC_0270.JPG","DSC_0275.JPG","DSC_0277.JPG","DSC_0278.JPG","DSC_0283.JPG"
   ];
 
   const gallery = document.getElementById("gallery");
   let currentImageIndex = 0;
 
-  // Add images to gallery
+  // build gallery thumbnails
   imageList.forEach((filename, index) => {
     const photoDiv = document.createElement('div');
     photoDiv.className = 'photo';
@@ -133,26 +69,68 @@
   const lightbox = document.querySelector('.lightbox');
   const lightboxImage = document.querySelector('.lightbox img');
   const closeBtn = document.querySelector('.close');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
+  const audio = document.getElementById('bgAudio');
+  const audioHint = document.getElementById('audioHint');
+  const toggleAudioBtn = document.getElementById('toggleAudio');
 
-  lightboxImage.addEventListener('click', (e) => {
-    e.stopPropagation();
-    lightboxImage.classList.toggle('zoomed');
+  // Toggle button allows user to explicitly start/stop audio if needed
+  toggleAudioBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        toggleAudioBtn.textContent = 'Pause audio';
+        toggleAudioBtn.setAttribute('aria-pressed','true');
+        audioHint.textContent = 'Audio playing — you can continue viewing photos.';
+        audio.controls = true;
+      }).catch(err => {
+        console.warn('Audio play prevented:', err);
+        // reveal controls so user can press play manually
+        audio.controls = true;
+        audioHint.textContent = 'Playback blocked; press Play in the audio controls.';
+      });
+    } else {
+      audio.pause();
+      toggleAudioBtn.textContent = 'Play audio';
+      toggleAudioBtn.setAttribute('aria-pressed','false');
+      audioHint.textContent = 'Audio paused. Click a photo or Play to start again.';
+    }
   });
 
-  const thumbnails = document.querySelectorAll('.gallery img');
-
-  thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('click', openLightbox);
-  });
-
+  // When a thumbnail is clicked, open the lightbox and start audio (thumbnail click is a user gesture)
   function openLightbox(event) {
+    // if clicking the download link, allow default
+    if (event.target.tagName === 'A') return;
+
     event.preventDefault();
     currentImageIndex = Number(event.target.dataset.index);
     updateLightboxImage();
     lightbox.style.display = 'flex';
+
+    // Start playback if not already playing. Because this handler runs from a click,
+    // browsers will allow play() in most cases.
+    if (audio.paused) {
+      audio.currentTime = 0;
+      audio.play().then(() => {
+        toggleAudioBtn.textContent = 'Pause audio';
+        toggleAudioBtn.setAttribute('aria-pressed','true');
+        audioHint.textContent = 'Audio playing — it will continue as you change images.';
+        audio.controls = true; // reveal controls so user can pause/seek if needed
+      }).catch(err => {
+        console.warn('Audio play prevented or failed:', err);
+        audio.controls = true;
+        audioHint.textContent = 'Playback blocked; press Play in the audio controls.';
+      });
+    } else {
+      // already playing — keep playing
+      audioHint.textContent = 'Audio already playing — it will continue as you change images.';
+      audio.controls = true;
+    }
   }
+
+  // Add click listeners to all thumbnails
+  const thumbnails = document.querySelectorAll('.gallery img');
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', openLightbox);
+  });
 
   function updateLightboxImage() {
     lightboxImage.src = `images/${imageList[currentImageIndex]}`;
@@ -160,6 +138,10 @@
 
   function closeLightbox() {
     lightbox.style.display = 'none';
+    // NOTE: We DO NOT pause the audio here, so playback keeps going after closing the lightbox.
+    // If you'd prefer it to stop when the user closes the lightbox, uncomment the pause below:
+    // audio.pause(); audio.currentTime = 0;
+    audioHint.textContent = audio.paused ? 'Audio paused.' : 'Audio playing in background.';
   }
 
   function changeImage(direction) {
@@ -170,15 +152,48 @@
       currentImageIndex = 0;
     }
     updateLightboxImage();
+    // keep audio playing across image changes; if it's paused we attempt to play again
+    if (audio.paused) {
+      audio.play().then(() => {
+        toggleAudioBtn.textContent = 'Pause audio';
+        toggleAudioBtn.setAttribute('aria-pressed','true');
+        audioHint.textContent = 'Audio playing — it will continue as you change images.';
+      }).catch(err => {
+        console.warn('Audio play on change failed:', err);
+        audio.controls = true;
+        audioHint.textContent = 'Tap Play on the audio controls to listen.';
+      });
+    }
   }
 
+  // close when clicking the backdrop or the close button
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target === closeBtn) {
       closeLightbox();
     }
   });
-</script>
 
+  // keyboard navigation: Esc to close, arrows to change
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display === 'flex') {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'ArrowRight') changeImage(1);
+    }
+  });
+
+  // Optional: pre-check whether the audio file is reachable (useful for debugging).
+  (function checkAudioExists() {
+    fetch('audio/Lions.mp3', { method: 'HEAD' }).then(res => {
+      if (!res.ok) {
+        console.warn('Audio file not reachable: status', res.status);
+        audioHint.textContent = 'Audio file not reachable. Check audio/Lions.mp3 path.';
+      }
+    }).catch(err => {
+      console.warn('Audio HEAD check failed', err);
+    });
+  })();
+</script>
 
 </body>
 </html>
