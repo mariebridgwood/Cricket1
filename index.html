@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
+    table.t1 {border-collapse: collapse}
+    td.td1 {border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #bfbfbf #bfbfbf #bfbfbf #bfbfbf; padding: 0.0px 5.0px 0.0px 5.0px}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;</span><span class="s2">🦁</span><span class="s1"> Carrum U10 Navy </span><span class="s2">🏏</span><span class="s1">&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="style.css"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;</span><span class="s2">🦁</span><span class="s1"> Carrum U10 Navy </span><span class="s2">🏏</span><span class="s1"> Round 1&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;!-- Add links to other repositories<span class="Apple-converted-space">  </span>class="active" <span class="Apple-converted-space">  </span>--&gt;</span></p>
+<p class="p1"><span class="s1">&lt;ul class="nav-list"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;li&gt;&lt;a href="https://mariebridgwood.github.io/Gallery"&gt;Home&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/ul&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;audio autoplay loop&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;source src="audio/Lions.mp3" type="audio/mpeg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Your browser does not support the audio element.</span></p>
+<p class="p1"><span class="s1">&lt;/audio&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="gallery" class="gallery"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Lightbox --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="lightbox" style="display:none;"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;span class="close"&gt;&amp;times;&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;img src="" alt="Enlarged photo"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="prev" onclick="changeImage(-1)"&gt;&amp;#10094;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="next" onclick="changeImage(1)"&gt;&amp;#10095;&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const imageList = [</span></p>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0024.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0025.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0026.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0029.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0031.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0034.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0038.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0040.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0041.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0042.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0052.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0054.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0060.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0066.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0068.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0074.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0078.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0084.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0087.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0089.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0096.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0097.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0103.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0104.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0105.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0118.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0120.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0121.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0122.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0123.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0132.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0134.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0136.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0138.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0140.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0143.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0149.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0151.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0152.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0155.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0156.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0164.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0166.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0169.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0171.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0173.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0175.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0178.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0180.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0188.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0189.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0192.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0194.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0204.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0205.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0206.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0210.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0223.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0225.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0227.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0229.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0231.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0232.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0236.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0241.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0243.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0248.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0250.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0253.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0255.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0257.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0259.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0261.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0266.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0269.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0270.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0275.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0277.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0278.JPG",</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle" class="td1">
+        <p class="p3"><span class="Apple-converted-space"> </span>"DSC_0283.JPG"</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const gallery = document.getElementById("gallery");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>let currentImageIndex = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>// Add images to gallery</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>imageList.forEach((filename, index) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const photoDiv = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>photoDiv.className = 'photo';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>photoDiv.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;img src="images/${filename}" alt="${filename}" data-index="${index}"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;a href="images/${filename}" download&gt;Download&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>gallery.appendChild(photoDiv);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const lightbox = document.querySelector('.lightbox');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const lightboxImage = document.querySelector('.lightbox img');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const closeBtn = document.querySelector('.close');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const prevBtn = document.querySelector('.prev');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const nextBtn = document.querySelector('.next');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>lightboxImage.addEventListener('click', (e) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>e.stopPropagation();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>lightboxImage.classList.toggle('zoomed');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const thumbnails = document.querySelectorAll('.gallery img');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>thumbnails.forEach(thumbnail =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>thumbnail.addEventListener('click', openLightbox);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function openLightbox(event) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>event.preventDefault();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>currentImageIndex = Number(event.target.dataset.index);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>updateLightboxImage();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>lightbox.style.display = 'flex';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function updateLightboxImage() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>lightboxImage.src = `images/${imageList[currentImageIndex]}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function closeLightbox() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>lightbox.style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>function changeImage(direction) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>currentImageIndex += direction;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (currentImageIndex &lt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>currentImageIndex = imageList.length - 1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>} else if (currentImageIndex &gt;= imageList.length) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>currentImageIndex = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>updateLightboxImage();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>lightbox.addEventListener('click', (e) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>if (e.target === lightbox || e.target === closeBtn) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>closeLightbox();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
